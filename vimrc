@@ -14,7 +14,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'vim-airline/vim-airline'
-Plugin 'ryanoasis/vim-devicons'
+"Plugin 'ryanoasis/vim-devicons'
 Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()
