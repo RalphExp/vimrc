@@ -1,6 +1,7 @@
 "=======================================
 "           initialization
 "=======================================
+syntax on
 set nocompatible  "set nocp
 filetype off      "required
 
@@ -9,13 +10,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 "let Vundle manage Vundle, required
+"Keep Plugin commands between vundle#begin/end
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
-Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
-"Plugin 'ryanoasis/vim-devicons'
-
-"Keep Plugin commands between vundle#begin/end
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
