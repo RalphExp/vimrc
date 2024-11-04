@@ -12,6 +12,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'vim-airline/vim-airline'
 "Plugin 'ryanoasis/vim-devicons'
 
 "Keep Plugin commands between vundle#begin/end
