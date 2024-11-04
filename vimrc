@@ -1,5 +1,5 @@
 "=======================================
-"               plugins
+"           initialization
 "=======================================
 set nocompatible  "set nocp
 filetype off      "required
@@ -56,12 +56,12 @@ endfunction
 "=======================================
 "               mappings
 "=======================================
-":let mapleader='\'
-"map <leader>s :call RemoveTrailSpaces()<CR> "<leader> is slash symbol '\'
+:map <C-n> :NERDTreeToggle<CR>
 
 "=======================================
 "            auto command
 "=======================================
 autocmd FileType make setlocal noexpandtab "don't expand tab if is Makefile
-autocmd BufWritePre *.{h,hh,hpp,c,cc,cpp,go,js,py,rb,java} call RemoveTrailSpaces()
 autocmd VimEnter *.{h,hh,hpp,c,cc,cpp,go,js,py,rb,java} NERDTree
+autocmd BufWritePre *.{h,hh,hpp,c,cc,cpp,go,js,py,rb,java} call RemoveTrailSpaces()
+autocmd VimLeavePre * if exists("t:NERDTreeBufName") | exe "NERDTreeClose" | endif
