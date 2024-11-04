@@ -20,13 +20,13 @@ Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
 
-let g:NERDTreeDirArrowExpandable = '📂'
-let g:NERDTreeDirArrowCollapsible = '📁'
+let g:NERDTreeDirArrowExpandable = '📁'
+let g:NERDTreeDirArrowCollapsible = '📂'
 let g:ycm_auto_trigger = 1
-"=======================================
-"         environment variable
-"=======================================
-set ts=4
+"==========================================================
+"                 environment variable
+"==========================================================
+set tabstop=4     "set ts=4
 set ruler
 set expandtab
 set number        "set nu
@@ -38,10 +38,9 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8
 set completeopt-=preview
-
-"=======================================
-"              functions
-"=======================================
+"==========================================================
+"                      functions
+"==========================================================
 function! RemoveTrailSpaces()
   " set the cursor position
   let l:l = line('.')
@@ -56,15 +55,22 @@ function! CheckSpell()
   :$r !spell %
 endfunction
 
-"=======================================
-"               mappings
-"=======================================
+function! RefreshVimConfig()
+  let l:l = expand('%:p')
+  if l == '.vimrc'
+    :source %
+  endif
+endfunction
+"==========================================================
+"                       mappings
+"==========================================================
 :map <C-n> :NERDTreeToggle<CR>
-
-"=======================================
-"            auto command
-"=======================================
-autocmd FileType make setlocal noexpandtab "don't expand tab if is Makefile
+:map <C-s> :w <CR>
+:map <C-r> :call RefreshVimConfig()<CR>
+"==========================================================
+"                     auto command
+"==========================================================
+autocmd FileType make setlocal noexpandtab
 autocmd VimEnter *.{h,hh,hpp,c,cc,cpp,go,js,py,rb,java} NERDTree | wincmd p
 autocmd BufWritePre *.{h,hh,hpp,c,cc,cpp,go,js,py,rb,java} call RemoveTrailSpaces()
 autocmd VimLeavePre * if exists("t:NERDTreeBufName") | exe "NERDTreeClose" | endif
