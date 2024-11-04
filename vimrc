@@ -23,6 +23,7 @@ filetype plugin indent on
 let g:NERDTreeDirArrowExpandable = '📁'
 let g:NERDTreeDirArrowCollapsible = '📂'
 let g:ycm_auto_trigger = 1
+let g:ycm_show_diagnostics_ui = 0
 "==========================================================
 "                 environment variable
 "==========================================================
@@ -41,7 +42,7 @@ set completeopt-=preview
 "==========================================================
 "                      functions
 "==========================================================
-function! RemoveTrailSpaces()
+function! RemoveTrailingSpaces()
   " set the cursor position
   let l:l = line('.')
   let l:c = col('.')
@@ -72,5 +73,5 @@ endfunction
 "==========================================================
 autocmd FileType make setlocal noexpandtab
 autocmd VimEnter *.{h,hh,hpp,c,cc,cpp,go,js,py,rb,java} NERDTree | wincmd p
-autocmd BufWritePre *.{h,hh,hpp,c,cc,cpp,go,js,py,rb,java} call RemoveTrailSpaces()
+autocmd BufWritePre *.{h,hh,hpp,c,cc,cpp,go,js,py,rb,java} call RemoveTrailingSpaces()
 autocmd VimLeavePre * if exists("t:NERDTreeBufName") | exe "NERDTreeClose" | endif
