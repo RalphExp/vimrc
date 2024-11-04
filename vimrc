@@ -14,7 +14,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'vim-airline/vim-airline'
-"Plugin 'ryanoasis/vim-devicons'
+Plugin 'tpope/vim-fugitive'
 Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()
@@ -22,6 +22,7 @@ filetype plugin indent on
 
 let g:NERDTreeDirArrowExpandable = '📂'
 let g:NERDTreeDirArrowCollapsible = '📁'
+let g:ycm_auto_trigger = 1
 "=======================================
 "         environment variable
 "=======================================
@@ -36,6 +37,7 @@ set emoji
 set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8
+set completeopt-=preview
 
 "=======================================
 "              functions
