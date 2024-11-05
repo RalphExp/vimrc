@@ -1,6 +1,6 @@
-"=======================================
-"           initialization
-"=======================================
+"==========================================================
+"                    initialization
+"==========================================================
 syntax on
 set nocompatible  "set nocp
 filetype off      "required
@@ -27,13 +27,13 @@ let g:ycm_show_diagnostics_ui = 0
 "==========================================================
 "                 environment variable
 "==========================================================
-set tabstop=4     "set ts=4
+set tabstop=4                        "set ts=4
 set ruler
 set expandtab
-set number        "set nu
-set shiftwidth=4  "set sw=4
+set number                           "set nu
+set shiftwidth=4                     "set sw=4
 set showmode
-set ignorecase    "set ic
+set ignorecase                       "set ic
 set emoji
 set encoding=utf-8
 set termencoding=utf-8
@@ -65,9 +65,12 @@ endfunction
 "==========================================================
 "                       mappings
 "==========================================================
-:map <C-n> :NERDTreeToggle<CR>
-:map <C-r> :NERDTreeRefreshRoot<CR>
-:map <C-s> :w <CR>
+:nnoremap <C-n> :NERDTreeToggle<CR>
+:nnoremap <C-r> :NERDTreeRefreshRoot<CR>
+:nnoremap <C-a> :normal ggVG <CR>
+:nnoremap <C-s> :w <CR>
+:nnoremap <C-q> :wq <CR>
+:nnoremap <F2>  :call RemoveTrailingSpaces()<CR>
 "==========================================================
 "                     auto command
 "==========================================================
