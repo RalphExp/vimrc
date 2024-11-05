@@ -70,6 +70,7 @@ endfunction
 :nnoremap <C-a> :normal ggVG <CR>
 :nnoremap <C-s> :w <CR>
 :nnoremap <C-q> :wq <CR>
+:nnoremap <tab> :wincmd w<CR>
 :nnoremap <F2>  :call RemoveTrailingSpaces()<CR>
 "==========================================================
 "                     auto command
