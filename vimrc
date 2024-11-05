@@ -56,18 +56,18 @@ function! CheckSpell()
   :$r !spell %
 endfunction
 
-function! RefreshVimConfig()
-  let l:l = expand('%:p')
-  if l == '.vimrc'
-    :source %
-  endif
-endfunction
+" function! RefreshVimConfig()
+"   let l:l = expand('%:p')
+"   if l =~ '.vimrc$'
+"     :source %
+"   endif
+" endfunction
 "==========================================================
 "                       mappings
 "==========================================================
 :map <C-n> :NERDTreeToggle<CR>
+:map <C-r> :NERDTreeRefreshRoot<CR>
 :map <C-s> :w <CR>
-:map <C-r> :call RefreshVimConfig()<CR>
 "==========================================================
 "                     auto command
 "==========================================================
