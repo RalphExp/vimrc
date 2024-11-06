@@ -23,7 +23,6 @@ filetype plugin indent on
 let g:NERDTreeDirArrowExpandable = '📁'
 let g:NERDTreeDirArrowCollapsible = '📂'
 let g:ycm_auto_trigger = 1
-let g:ycm_show_diagnostics_ui = 0
 "==========================================================
 "                 environment variable
 "==========================================================
@@ -50,18 +49,6 @@ function! RemoveTrailingSpaces()
   " restore cursor position
   call cursor(l,c)
 endfunction
-
-function! CheckSpell()
-  "call shell command spell
-  :$r !spell %
-endfunction
-
-" function! RefreshVimConfig()
-"   let l:l = expand('%:p')
-"   if l =~ '.vimrc$'
-"     :source %
-"   endif
-" endfunction
 "==========================================================
 "                       mappings
 "==========================================================
