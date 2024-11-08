@@ -63,6 +63,6 @@ endfunction
 "                     auto command
 "==========================================================
 autocmd FileType make setlocal noexpandtab
-autocmd VimEnter *.{h,hh,hpp,c,cc,cpp,go,js,py,rb,java} NERDTree | wincmd p
-autocmd BufWritePre *.{h,hh,hpp,c,cc,cpp,go,js,py,rb,java} call RemoveTrailingSpaces()
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufWritePre * call RemoveTrailingSpaces()
 autocmd VimLeavePre * if exists("t:NERDTreeBufName") | exe "NERDTreeClose" | endif
